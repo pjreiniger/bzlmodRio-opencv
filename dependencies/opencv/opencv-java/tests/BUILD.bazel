@@ -1,6 +1,4 @@
-
-load("@wpiutil-java//:defs.bzl", "bazelrio_java_binary")
-
+load("@rules_bazelrio//:java_rules.bzl", "bazelrio_java_binary")
 
 bazelrio_java_binary(
     name = "Main",
