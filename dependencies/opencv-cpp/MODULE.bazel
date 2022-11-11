@@ -1,0 +1,17 @@
+module(
+    name = "opencv-cpp",
+    version = "4.6.0-2",
+)
+
+bazel_dep(name = "platforms", version = "0.0.4")
+
+
+bazel_dep(name = "opencv-cpp-linuxathena", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-linuxathenastatic", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-windowsx86-64", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-linuxx86-64", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-osxx86-64", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-windowsx86-64static", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-linuxx86-64static", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-osxx86-64static", version = "4.6.0-2")
+bazel_dep(name = "opencv-cpp-headers", version = "4.6.0-2")

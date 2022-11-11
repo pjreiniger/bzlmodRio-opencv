@@ -1,0 +1,11 @@
+
+bazel_dep(name = "opencv-cpp", repo_name = "opencv-cpp", version = "")
+
+local_path_override(
+    module_name = "opencv-cpp",
+    path = "..",
+)
+
+
+
+bazel_dep(name = "rules_cc", version = "0.0.2")

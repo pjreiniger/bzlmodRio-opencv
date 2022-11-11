@@ -1,0 +1,16 @@
+
+load("@wpiutil-java//:defs.bzl", "bazelrio_java_binary")
+
+
+bazelrio_java_binary(
+    name = "Main",
+    srcs = ["Main.java"],
+    deps = [
+        "@opencv-java//:opencv",
+    ],
+    main_class = "bazelrio_test.Main",
+    
+    jvm_flags = [
+        "-Djava.library.path=.",
+    ],
+)
