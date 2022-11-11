@@ -11,23 +11,8 @@ from cc_dependency import CcDependency
 
 def get_opencv_dependencies():
 
-    opencv_group = DependencyContainer("4.6.0-2", "")
-    opencv_group.cc_deps.append(CcDependency(
-        name="opencv-cpp", 
-        maven_url = "",
-        group_id = "",
-        version="4.6.0-2", 
-        parent_folder="opencv", 
-        dependencies=[], 
-        resources=[], 
-        headers=None, 
-        has_jni=False))
-    opencv_group.dep_lookup["opencv-cpp"] = opencv_group.cc_deps[-1]
-
-    group = DependencyContainer("2023.1.1-beta-3", "https://frcmaven.wpi.edu/release")
-    group.dep_lookup.update(opencv_group.dep_lookup)
-
-
+    group = DependencyContainer("4.6.0-2", "https://frcmaven.wpi.edu/release")
+    group.create_cc_dependency(f"opencv-cpp", parent_folder="opencv", group_id=f"edu.wpi.first", headers="headers", resources=[], has_jni=True)
     # _cc_dependency(group, "wpiutil", has_jni=True)
     # _cc_dependency(group, "wpinet", has_jni=True, dependencies=["wpiutil-cpp"])
     # _cc_dependency(group, "wpimath", has_jni=True, dependencies=["wpiutil-cpp"])
@@ -59,12 +44,12 @@ def get_opencv_dependencies():
     return group
 
 def main():
-    output_dir = r'C:\Users\PJ\Documents\GitHub\bazelRio\bazelrio_bzlmod\dependencies'
+    output_dir = r'C:\Users\PJ\Documents\GitHub\bazelRio\bazelrio_bzlmod-opencv\dependencies'
     registry_location = r'C:\Users\PJ\Documents\GitHub\bazelRio\bazel-central-registry'
 
-    group = get_allwpilib_dependencies()
+    group = get_opencv_dependencies()
     generate_group(output_dir, group)
-    generate_json(registry_location, group)
+    # generate_json(registry_location, group)
     
 if __name__ == "__main__":
     main()
