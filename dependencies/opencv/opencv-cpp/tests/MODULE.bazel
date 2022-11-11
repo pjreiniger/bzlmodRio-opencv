@@ -8,4 +8,10 @@ local_path_override(
 
 
 
+bazel_dep(name = "rules_bazelrio", version = "0.0.1")
+local_path_override(
+    module_name = "rules_bazelrio",
+    path = "../../../../rules_bazelrio"
+)
+
 bazel_dep(name = "rules_cc", version = "0.0.2")

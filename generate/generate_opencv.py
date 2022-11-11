@@ -7,12 +7,13 @@ from generate_group import generate_group
 from generate_json import generate_json
 from platforms import default_all_platforms, default_native_shared_platforms
 from cc_dependency import CcDependency
+from platforms import default_all_platforms, default_native_shared_platforms
 
 
 def get_opencv_dependencies():
 
     group = DependencyContainer("4.6.0-2", "https://frcmaven.wpi.edu/release")
-    group.create_cc_dependency(f"opencv-cpp", parent_folder="opencv", group_id=f"edu.wpi.first", headers="headers", resources=[], has_jni=True)
+    group.create_cc_dependency(f"opencv-cpp", parent_folder="opencv", group_id=f"edu.wpi.first", headers="headers", resources=default_all_platforms(), has_jni=False)
     # _cc_dependency(group, "wpiutil", has_jni=True)
     # _cc_dependency(group, "wpinet", has_jni=True, dependencies=["wpiutil-cpp"])
     # _cc_dependency(group, "wpimath", has_jni=True, dependencies=["wpiutil-cpp"])
