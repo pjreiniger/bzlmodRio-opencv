@@ -1,7 +1,7 @@
 load("@rules_bazelrio//:java_rules.bzl", "bazelrio_java_binary")
 
 bazelrio_java_binary(
-    name = "Main",
+    name = "main",
     srcs = ["Main.java"],
     deps = [
         "@opencv-java//:opencv",

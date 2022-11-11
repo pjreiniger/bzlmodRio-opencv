@@ -6,5 +6,6 @@ java_library(
     visibility = ["//visibility:public"],
     exports = [
         artifact("edu.wpi.first.thirdparty.frc2023.opencv:opencv-java"),
+        "@opencv-cpp//:jni",
     ],
 )

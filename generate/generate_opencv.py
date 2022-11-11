@@ -13,17 +13,10 @@ from platforms import default_all_platforms, default_native_shared_platforms
 def get_opencv_dependencies():
 
     group = DependencyContainer("4.6.0-2", "https://frcmaven.wpi.edu/release")
-    group.create_cc_dependency(f"opencv-cpp", parent_folder="opencv", group_id=f"edu.wpi.first", headers="headers", resources=default_all_platforms(), has_jni=False)
-    # _cc_dependency(group, "wpiutil", has_jni=True)
-    # _cc_dependency(group, "wpinet", has_jni=True, dependencies=["wpiutil-cpp"])
-    # _cc_dependency(group, "wpimath", has_jni=True, dependencies=["wpiutil-cpp"])
-    # _cc_dependency(group, "hal", has_jni=True, dependencies=["wpiutil-cpp"])
-    # _cc_dependency(group, "ntcore", has_jni=True, dependencies=["wpiutil-cpp", "wpinet-cpp"])
-    # _cc_dependency(group, "cscore", has_jni=True, dependencies=["wpiutil-cpp", "wpinet-cpp", "opencv-cpp"])
-    # _cc_dependency(group, "cameraserver", has_jni=False, dependencies=["wpiutil-cpp", "cscore-cpp", "ntcore-cpp", "wpinet-cpp", "opencv-cpp"])
-    # _cc_dependency(group, "wpilibc", has_jni=False, dependencies=["wpiutil-cpp", "wpimath-cpp", "wpinet-cpp", "cscore-cpp", "ntcore-cpp", "hal-cpp", "cameraserver-cpp", "opencv-cpp"])
-    # _cc_dependency(group, "wpilibNewCommands", has_jni=False, dependencies=["wpiutil-cpp", "wpimath-cpp", "wpinet-cpp", "cscore-cpp", "ntcore-cpp", "hal-cpp", "cameraserver-cpp", "opencv-cpp", "wpilibc-cpp"])
+    group.create_cc_dependency(f"opencv-cpp", parent_folder="opencv", group_id=f"edu.wpi.first", headers="headers", resources=default_all_platforms(), has_jni=True)
     
+    group.create_java_dependency(f"opencv-java", parent_folder="opencv", group_id=f"edu.wpi.first.thirdparty.frc2023.opencv", dependencies=["opencv-cpp"])
+
     # _java_dependency(group, "wpiutil", dependencies=["wpiutil-cpp"], maven_deps=[
     #     ("com.fasterxml.jackson.core:jackson-annotations", "2.12.4"),
     #     ("com.fasterxml.jackson.core:jackson-core", "2.12.4"),
