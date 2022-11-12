@@ -18,11 +18,11 @@ bazel_dep(name = "rules_jvm_external", version = "4.4.2")
 
 bazel_dep(name = "rules_bazelrio", version = "0.0.1")
 
+
 local_path_override(
     module_name = "opencv-cpp",
     path = "../../../opencv/opencv-cpp"
 )
-
 
 
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
