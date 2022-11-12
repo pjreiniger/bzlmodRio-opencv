@@ -1,0 +1,17 @@
+name: Build example project
+on: [pull_request, push]
+jobs:
+  build_windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - { os: windows-latest, name: "cpp", dir: "dependencies/opencv/opencv-cpp" } 
+        - { os: windows-latest, name: "java", dir: "dependencies/opencv/opencv-java" } 
+        
+    name: "Build - ${{ matrix.name }}"
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - run: bazel build //...:* -k --verbose_failures
+      working-directory: ${{ matrix.dir }}/tests
