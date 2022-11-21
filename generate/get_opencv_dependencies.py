@@ -34,7 +34,7 @@ def get_opencv_dependencies():
     version = "4.5.5-2"
     version = "4.5.5-3"
     version = "4.6.0-1"
-    # version = "4.6.0-2"
+    version = "4.6.0-2"
     # version = "4.6.0-3"
 
     group_id = f"edu.wpi.first.thirdparty.frc{year}.opencv"
