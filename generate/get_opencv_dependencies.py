@@ -21,11 +21,21 @@ def _default_all_platforms():
     )
 
 def get_opencv_dependencies():
-    year = "2023"
-    version = "4.6.0-2"
     
     year = "2021"
-    version = "3.4.7-4"
+    # version = "3.4.7-4"
+    version = "3.4.7-5"
+    
+    # year = "2022"
+    # version = "4.5.2-1"
+
+    # year = "2023"
+    # version = "4.5.5-1"
+    # version = "4.5.5-2"
+    # version = "4.5.5-3"
+    # version = "4.6.0-1"
+    # version = "4.6.0-2"
+    # version = "4.6.0-3"
 
     group_id = f"edu.wpi.first.thirdparty.frc{year}.opencv"
 
