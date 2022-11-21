@@ -1,0 +1,46 @@
+
+module(
+    name = "wpi-opencv",
+    version = "3.4.7-4",
+    compatibility_level = 2021,
+)
+
+bazel_dep(name = "bazel_skylib", version = "1.1.1")
+bazel_dep(name = "platforms", version = "0.0.4")
+bazel_dep(name = "rules_cc", version = "0.0.2")
+bazel_dep(name = "rules_java", version = "5.1.0")
+bazel_dep(name = "rules_python", version = "0.12.0")
+bazel_dep(name = "rules_jvm_external", version = "4.4.2")
+
+bazel_dep(name = "rules_bazelrio", version = "0.0.2")
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    artifacts = [
+        "edu.wpi.first.thirdparty.frc2021.opencv:opencv-java:3.4.7-4",
+    ],
+    repositories = [
+        "https://repo1.maven.org/maven2",
+        "https://frcmaven.wpi.edu/release",
+    ]
+)
+
+use_repo(
+    maven,
+    "maven",
+)
+
+
+setup_wpi_opencv_dependencies = use_extension("//:maven_cpp_deps.bzl", "setup_wpi_opencv_dependencies")
+use_repo(
+    setup_wpi_opencv_dependencies,
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_headers",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_linuxathena",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_linuxathenastatic",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_windowsx86-64",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_linuxx86-64",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_osxx86-64",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_windowsx86-64static",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_linuxx86-64static",
+    "bazelrio_edu_wpi_first_thirdparty_frc_opencv_opencv-cpp_osxx86-64static",
+)
