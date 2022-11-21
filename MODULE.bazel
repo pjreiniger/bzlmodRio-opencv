@@ -1,7 +1,7 @@
 
 module(
     name = "wpi-opencv",
-    version = "3.4.7-4",
+    version = "3.4.7-5",
     compatibility_level = 2021,
 )
 
@@ -17,7 +17,7 @@ bazel_dep(name = "rules_bazelrio", version = "0.0.2")
 maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
-        "edu.wpi.first.thirdparty.frc2021.opencv:opencv-java:3.4.7-4",
+        "edu.wpi.first.thirdparty.frc2021.opencv:opencv-java:3.4.7-5",
     ],
     repositories = [
         "https://repo1.maven.org/maven2",
