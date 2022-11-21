@@ -1,0 +1,10 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_library(
+    name = "opencv",
+    visibility = ["//visibility:public"],
+    exports = [
+        artifact("edu.wpi.first.thirdparty.frc2021.opencv:opencv-java"),
+        "@wpi-opencv//dependencies/cpp/opencv:jni",
+    ],
+)

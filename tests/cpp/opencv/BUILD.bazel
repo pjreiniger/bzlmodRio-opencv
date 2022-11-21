@@ -1,0 +1,15 @@
+cc_binary(
+    name = "main",
+    srcs = ["main.cpp"],
+    # deps = ["@com_github_google_glog//:glog"],
+    deps = ["@wpi-opencv//dependencies/cpp/opencv"],
+)
+
+cc_test(
+    name = "test",
+    srcs = ["test.cpp"],
+    deps = [
+        "@googletest//:gtest_main",
+        "@wpi-opencv//dependencies/cpp/opencv",
+    ],
+)
