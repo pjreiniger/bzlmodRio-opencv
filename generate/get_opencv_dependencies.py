@@ -26,8 +26,8 @@ def get_opencv_dependencies():
     # version = "3.4.7-4"
     version = "3.4.7-5"
     
-    # year = "2022"
-    # version = "4.5.2-1"
+    year = "2022"
+    version = "4.5.2-1"
 
     # year = "2023"
     # version = "4.5.5-1"
